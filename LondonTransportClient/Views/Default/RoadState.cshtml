@@ -1,0 +1,20 @@
+﻿
+@model List<Tfl.Api.Presentation.Entities.RoadCorridor>
+@{
+    ViewBag.Title = "Current state of roads";
+}
+
+<h2 class="text-center">Current state of roads:</h2>
+
+<div >
+    @foreach (var x in Model)
+    {
+        <p><b>Display Name :</b> @x.DisplayName</p>
+        <p><b>Envelope:</b> @x.Envelope</p>
+        <p><b>Group:</b> @x.Group</p>
+        <p><b>Status Severity :</b> @x.StatusSeverity</p>
+        <p><b>Status Severity Description :</b> @x.StatusSeverityDescription</p>
+        <p><b>Bounds:</b> @x.Bounds</p>
+        <hr style="background-color: black; border: none; color: black; height: 2px" >
+    }
+</div>

@@ -1,0 +1,40 @@
+﻿@model Tfl.Api.Presentation.Entities.CarParkOccupancy
+
+@{
+    ViewBag.Title = "Parking search by id";
+}
+
+<h2 class="text-center">Parking search by id</h2>
+
+<div class="text-center">
+    <br />
+    <form method="get">
+        <p>
+            <input type="search" name="SearchId" placeholder="Example: CarParks_800468" required/>
+            <input type="submit" value="Search" />
+        </p>
+    </form>
+    <br />
+</div>
+
+@if (Model != null)
+{
+    if (Model.Bays == null)
+    {
+        <h3 class="text-center" style="color: red">Error, please specify the correct id.</h3>
+    }
+    else
+    {
+        <p><b>Name:</b> @Model.Name</p>
+        
+        foreach (var item in Model.Bays)
+        {
+            <p><b>Bay Type:</b> @item.BayType</p>
+            <p><b>Bay Count:</b> @item.BayCount</p>
+            <p><b>Free:</b> @item.Free</p>
+            <p><b>Occupied:</b> @item.Occupied</p>
+        }
+
+    }
+
+}

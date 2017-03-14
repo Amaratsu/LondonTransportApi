@@ -1,0 +1,33 @@
+﻿@model List<Tfl.Api.Presentation.Entities.Place>
+
+@{
+    ViewBag.Title = "SearchBikeStantionByNane";
+}
+
+<h2 class="text-center">Search Bike Stantion By Nane</h2>
+
+<div class="text-center">
+    <br />
+    <form method="get">
+        <p>
+            <input type="search" name="searchName" placeholder="Example: St. James" required />
+            <input type="submit" value="Search" />
+        </p>
+    </form>
+    <br />
+</div>
+
+@if (Model != null)
+{
+    foreach (var item in Model)
+    {
+        <p><b>Id:</b> @item.Id</p>
+            <p><b>Operation Type:</b> @item.Id</p>
+            <p><b>VehicleId:</b> @item.CommonName</p>
+            <p><b>Naptan Id:</b> @item.PlaceType</p>
+            <p><b>Station Name:</b> @item.Lat</p>
+            <p><b>Line Id:</b> @item.Lon</p>
+            <hr style="background-color: black; border: none; color: black; height: 2px">
+    }
+
+}

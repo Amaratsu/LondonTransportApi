@@ -1,0 +1,44 @@
+﻿@model List<Tfl.Api.Presentation.Entities.Prediction>
+
+@{
+    ViewBag.Title = "List Of Arrival Prediction";
+}
+
+<h2 class="text-center">List Of Arrival Prediction</h2>
+
+<div class="text-center">
+    <br />
+    <form method="get">
+        <p>
+            <input type="search" name="SearchPredicationId" placeholder="Example: 940GZZLUASL" required />
+            <input type="submit" value="Search" />
+        </p>
+    </form>
+    <br />
+</div>
+
+@if (Model != null)
+{
+    foreach (var item in Model)
+    {
+        <p><b>Id:</b> @item.Id</p>
+        <p><b>Operation Type:</b> @item.OperationType</p>
+        <p><b>VehicleId:</b> @item.VehicleId</p>
+        <p><b>Naptan Id:</b> @item.NaptanId</p>
+        <p><b>Station Name:</b> @item.StationName</p>
+        <p><b>Line Id:</b> @item.LineId</p>
+        <p><b>Line Name:</b> @item.LineName</p>
+        <p><b>Platform Name:</b> @item.PlatformName</p>
+        <p><b>Direction:</b> @item.Direction</p>
+        <p><b>Destination Naptan Id:</b> @item.DestinationNaptanId</p>
+        <p><b>Destination Name:</b> @item.DestinationName</p>
+        <p><b>Times tamp:</b> @item.Timestamp</p>
+        <p><b>Time To Station:</b> @item.TimeToStation</p>
+        <p><b>Current Location:</b> @item.CurrentLocation</p>
+        <p><b>Towards:</b> @item.Towards</p>
+        <p><b>Expected Arrival:</b> @item.ExpectedArrival</p>
+        <p><b>Time To Live:</b> @item.TimeToLive</p>
+        <p><b>Mode Name:</b> @item.ModeName</p>
+        <hr style="background-color: black; border: none; color: black; height: 2px">
+    }
+}

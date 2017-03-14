@@ -1,0 +1,44 @@
+﻿@model Tfl.Api.Presentation.Entities.LondonAirForecast
+@{
+    ViewBag.Title = "Air Quality";
+}
+
+<h2 class="text-center">Air Quality</h2>
+<p>
+    <b>@Model.DisclaimerText</b>
+</p>
+<p>
+    <b>Update Frequency : </b>@Model.UpdateFrequency
+</p>
+<p>
+    <b>Update Period : </b>@Model.UpdatePeriod
+</p>
+
+@foreach (var currentForecast in Model.CurrentForecast)
+{
+    <hr style="background-color: black; border: none; color: black; height: 2px">
+    <p>
+        <b>Forecast Type : </b>@currentForecast.ForecastType
+    </p>
+        <p>
+            <b>Forecast Band : </b>@currentForecast.ForecastBand
+        </p>
+        <p>
+            <b>Forecast Summary : </b>@currentForecast.ForecastSummary
+        </p>
+        <p>
+            <b>NO2 Band : </b>@currentForecast.NO2Band
+        </p>
+        <p>
+            <b>O3 Band : </b>@currentForecast.O3Band
+        </p>
+        <p>
+            <b>PM10 Band : </b>@currentForecast.PM10Band
+        </p>
+        <p>
+            <b>PM25 Band : </b>@currentForecast.PM25Band
+        </p>
+        <p>
+            <b>SO2 Band : </b>@currentForecast.SO2Band
+        </p>
+}

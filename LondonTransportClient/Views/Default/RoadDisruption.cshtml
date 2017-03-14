@@ -1,0 +1,17 @@
+﻿@model List< Tfl.Api.Presentation.Entities.StatusSeverity>
+
+@{
+    ViewBag.Title = "Road Disruption";
+}
+
+<h2 class="text-center">Road Disruption</h2>
+
+<div>
+    @foreach (var x in Model)
+    {
+        <p><b>Mode Name  :</b> @x.ModeName</p>
+        <p><b>Severity Level:</b> @x.SeverityLevel</p>
+        <p><b>Description:</b> @x.Description</p>
+        <hr style="background-color: black; border: none; color: black; height: 2px">
+    }
+</div>

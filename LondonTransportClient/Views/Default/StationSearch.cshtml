@@ -1,0 +1,44 @@
+﻿
+@model Tfl.Api.Presentation.Entities.RouteSearchResponse
+
+@{
+    ViewBag.Title = "Station search";
+}
+
+<h2 style="text-align: center">Station search</h2>
+<div style="text-align: center">
+    <br/>
+    <form method="get">
+        <p>
+            <input type="search" name="Term" placeholder="Example: victoria"/>
+            <input type="submit" value="Search"/>
+        </p>
+    </form>
+    <br/>
+</div>
+@if (Model.SearchMatches != null)
+{
+    foreach (var item in Model.SearchMatches)
+    {
+        <p>
+            <b>Line Name:</b> @item.LineName</p>
+        foreach (var item1 in item.LineRouteSection)
+        {
+            <hr style="background-color: black; border: none; color: black; height: 2px">
+            <p>
+                <b>Destination:</b> @item1.Destination</p>
+            <p>
+                <b>Direction:</b> @item1.Direction</p>
+            <p>
+                <b>FromStation:</b> @item1.FromStation</p>
+            <p>
+                <b>Route Id:</b> @item1.RouteId</p>
+            <p>
+                <b>Service Type:</b> @item1.ServiceType</p>
+            <p>
+                <b>To Station:</b> @item1.ToStation</p>
+            <p>
+                <b>Vehicle Destination Text:</b> @item1.VehicleDestinationText</p>
+        }
+    }
+}
